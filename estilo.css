@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    background-color: #D9593D;
+    color: #292a35;
+}
+h1{
+    text-align: center;
+    height: bold;
+    font-size: 3rem;
+    margin: 3% 3%;
+}
+h3{
+    margin-left: 5px;
+    margin:2% 2%;
+    font-size: 1.5rem;
+    text-align: center;
+    
+}
+div{
+    margin: 1%;
+    font-size: 20px;
+    height: 80px;
+    
+}
+label{
+    align-items: center;
+}
+span{
+    font-size: .9rem;
+    display: inline-block;
+}
+#bajarTexto{
+    position: relative;
+    top: 7px;
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+.capital{
+    margin-top: 10%;
+}
+form{
+    background-color: #F2A03D;
+    width: 50%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+}
+/* contenedordel formulario */
+input{
+    height: 40%;
+    position: relative;
+    left: auto;
+    font-size: 1rem;
+}
+.btn{
+    font-size: 1.5rem;
+    background-color:#fff;
+    margin: 5px;
+    display: inline-block;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+/* contenedor que contiene el boton calcular y limpiar */
+.boton{
+    margin-right: 0%;
+    display: flex;
+    justify-content: center;
+}
+
+.contenido{
+    display: none;
+}
+.resultado{
+    background-color: aliceblue;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.resultado td{
+    padding: 10px;
+    border-bottom: 2px solid #D9593D;
+    border-collapse: collapse;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.resultado table{
+    border-collapse: collapse;
+    width: 70%;
+}
+.regresar{
+    padding: 5px;
+    margin-left: 0;
+    margin-top: 20px;
+}
+
+.contenido{
+    display: block;
+}
+
+/* tabla de resultados creados en el DOM */
+#tabla{
+    opacity: 0.8;
+}
+
+
+
+
+
+
+

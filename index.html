@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de plazo fijo</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    
+    <header>
+        <h1>Simulador de plazo fijo</h1>
+    </header>
+    <main>
+        <form id="formularioPrincipal" action="">
+            <div class="contenido" id="form">
+
+                <div class="capital">
+                    <label for="inputCapital">Capital a invertir</label>
+                    <input required type="number" id="inputCapital">
+                    <span class="errorCapital">(Minimo $1000)</span>
+                </div>
+                
+                <div class="plazo">
+                    <label for="inputPlazo">Plazo  (en  dias)*</label>
+                    <input required type="number" name="" id="inputPlazo">
+                    <span id="bajarTexto" class="errorPlazo">(Minimo 30 dias - <br> Maximo 365 dias)</span>
+
+                </div>
+                
+                <div class="boton">
+
+                    <input id="calcular"  value="Calcular" type="submit" class="btn">
+                    <input type="reset" value="Limpiar" class="btn">
+                </div>
+                
+                
+                <p>
+                    *La tasa de interes para todos los plazos es del 27% anual
+                </p>
+            </div>
+        <div>
+            <button type="button" id="clickMe">
+                click me to see the message after completing the changes
+            </button>
+        </div>
+        </form>
+    </main> 
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="plazoFijo.js"></script>
+</body>
+</html>
