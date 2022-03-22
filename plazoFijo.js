@@ -122,17 +122,56 @@ $(document).ready(function(){
                     function runAJAX() {
                         alert("Que tengas un buen día");
                     }
-                
-                // ocultar
-                function myFunction() {
-                    var x = document.getElementById("myDIV");
-                    if (x.style.display === "none") {
-                        x.style.display = "block";
-                    } else {
-                        x.style.display = "none";
-                    }
-                }
 
+                // darkMode
+                var checkbox = document.querySelector('input[name=theme]');
+
+checkbox.addEventListener('change', function() {
+    if(this.checked) {
+        trans()
+        document.documentElement.setAttribute('data-theme', 'light')
+        window.localStorage.setItem('data-theme', 'light');
+    } else {
+        trans()
+        document.documentElement.setAttribute('data-theme', 'dark')
+        window.localStorage.setItem('data-theme', 'dark');
+        }
+    })
+
+    let trans = () => {
+        document.documentElement.classList.add('transition');
+        window.setTimeout(() => {
+        document.documentElement.classList.remove('transition')
+    }, 1000)
+}
+
+//Script for storing state in local storage
+
+const toggleSwitch = document.getElementById('switch');
+const currentTheme = localStorage.getItem('data-theme');
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+    }
+}  
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('data-theme', 'dark');  
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('data-theme', 'light'); 
+    }
+} 
+
+toggleSwitch.addEventListener('change', switchTheme, false);
+
+
+                // storage
                 function agregarHistorial(capital,plazo,tasa,interes,montoFinal){
                     const datos= {capital, plazo, tasa, interes, montoFinal}
                     historialInversiones.push(datos);
@@ -141,8 +180,8 @@ $(document).ready(function(){
                 
                 
                 const historialInversionesJson= JSON.stringify(historialInversiones)
-                sessionStorage.setItem('Calculos de inversiones', historialInversionesJson)       
-
+                sessionStorage.setItem('Calculos de inversiones', historialInversionesJson)     
+                
                 function enviarDatosApi() {
                     let Inversiones = {
                         "userId": 1,
